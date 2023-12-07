@@ -1,62 +1,43 @@
+import 'react-native-gesture-handler';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View , ScrollView, SafeAreaView} from 'react-native';
 import Card from './src/components/card/Card';
 import InputData from './src/components/inputData/inputData';
+import Btn from './src/components/btn/Btn'
+import Teste from './src/screens/Teste';
+import Venda from './src/screens/Venda';
+
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+
+import Home from './src/screens/Home';
+
+type StackNavigatorParamsList = {
+  Home: undefined; 
+  Teste:undefined;
+  Venda:undefined;
+};
+
+const Stack = createStackNavigator<StackNavigatorParamsList>();
 
 export default function App() {
   return (
-    //ScrollView é para arrastar para baixo é cima 
-
-    <SafeAreaView >
-      <ScrollView  >
-      {/* SafeAreaView ele server para o programa não sobrepor a hora */}
-
-          <Text >Olá Mundo !</Text>
-          <Card/>
-          <InputData/>
-          <Text style ={styles.title}>Olá teste de edição !</Text>
-          <Text style ={styles.title}>Olá teste de edição</Text>
-          <Text style ={styles.title}>Olá teste de edição</Text>
-          <Text style ={styles.title}>Olá teste de edição</Text>
-          <Text style ={styles.title}>Olá teste de edição</Text>
-          <Text style ={styles.title}>Olá teste de edição</Text>
-
-      </ScrollView>
-      <StatusBar style="auto" />
-
-    </SafeAreaView>
-    
-
-   
-
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName='Home'>
+        <Stack.Screen name='Home' component={Home} options={{title:'Tela teste'}}></Stack.Screen>
+        <Stack.Screen name='Teste'component={Teste}></Stack.Screen>
+        <Stack.Screen name='Venda'component={Venda}></Stack.Screen>
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    // alignItems: 'center',
-    // justifyContent: 'center',
-    borderColor:'#808080'
-    
-  },
-  title:{
-    backgroundColor: '#808080',
-    borderRadius:50,
-    margin: 50,
-    padding:50, 
-  },
+  conteiner:{
+    flex:1,
+    backgroundColor: '#ffffff',
+    justifyContent:'center',
+    alignItems:'center',
 
-  title1:{
-    backgroundColor: '#808080',
-    borderRadius:50,
-    margin: 80,
-    padding:80, 
-  },
-
-
-
-
-  
+  }
 });

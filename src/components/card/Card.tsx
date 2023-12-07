@@ -6,7 +6,7 @@ import { View, StyleSheet, Text} from "react-native"
 export default function Card(){
     return(
       <View>
-      <Text>Card</Text>
+        <Text>Card</Text>
       </View>      
 
             
@@ -19,7 +19,6 @@ const styles = StyleSheet.create({
       backgroundColor: '#fff',
       alignItems: 'center',
       justifyContent: 'center',
-      fontSize: 500,
       borderColor:'#808080'
       
     },

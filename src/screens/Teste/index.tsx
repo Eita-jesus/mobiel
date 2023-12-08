@@ -14,8 +14,6 @@ export default function Teste(){
                 <Text>Ir para tela Venda</Text>
             </TouchableOpacity>
 
-
-
         </View>
     )
 }

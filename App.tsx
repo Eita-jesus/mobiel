@@ -24,7 +24,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName='Home'>
-        <Stack.Screen name='Home' component={Home} options={{title:'Tela teste'}}></Stack.Screen>
+        <Stack.Screen name='Home' component={Home} options={{ headerShown:false }}></Stack.Screen>
         <Stack.Screen name='Teste'component={Teste}></Stack.Screen>
         <Stack.Screen name='Venda'component={Venda}></Stack.Screen>
       </Stack.Navigator>

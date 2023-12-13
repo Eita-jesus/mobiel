@@ -1,13 +1,15 @@
 import { Rect } from 'react-native-safe-area-context';
-import { StyleSheet, Text, View , ScrollView, SafeAreaView, TouchableOpacity, FlatList} from 'react-native';
-import Card from '../../components/card/Card';
-import InputData from '../../components/inputData/inputData';
-import Btn from '../../components/btn/Btn';
+import { StyleSheet, Text, View , ScrollView,Image,  SafeAreaView, TouchableOpacity, FlatList} from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { useNavigation, NavigationProp} from '@react-navigation/native'; 
-import Teste from '../Teste';
 import { getAllPokemon } from '../../controllers/pokemonControllers';
 import { useEffect, useState } from 'react';
+import Header from '../../components/header/Header';
+import Bullets from '../../components/bullets/Bullets';
+import Carousel from 'react-native-snap-carousel';
+import Carrossel from '../../components/carrossel/Carrossel';
+import Card from '../../components/card/Card';
+import imageFundo from '../../../assets/minion.jpg';
 
 export default function Home(){
     
@@ -22,50 +24,59 @@ export default function Home(){
     })
     
     return(
+      
+      <ScrollView>
+          <View style={styles.viewstyle} >
+
+          <Header />
+
+          <ScrollView horizontal={true}>
+              <Bullets></Bullets>
+         
+          </ScrollView>
+          <Carrossel data={pokemons}/>
 
 
-    // <SafeAreaView >
-        
-      // <ScrollView  >
-      <View>
-          <Text >Olá Mundo !</Text>
+          <Text>teste1</Text>
+          <Text>teste123</Text>
+          {/* <InputData/> */}
 
-          <InputData/>
           <TouchableOpacity style= {styles.btnText} onPress={() => navigate('Teste')}>
             <Text>Ir para a tela teste</Text>
           </TouchableOpacity>
+          
+          <Card data = {pokemons}/>
 
+          {/* <FlatList 
 
-          {/* <Btn/>
-          <Text style ={styles.title}>Olá teste de edição</Text> */}
-
-          <FlatList 
             data={pokemons}
             keyExtractor={pokemons => pokemons.name}
             renderItem={({item: pokemons}) =>(
-              <Card data ={pokemons}/>
-          )}
-          
-          ></FlatList>
+            <Card data ={pokemons}/>
+          )}/> */}
 
-          <StatusBar style="auto" />
 
-      {/* // </ScrollView> */}
-      </View>
-    // </SafeAreaView>
+          <Image source={imageFundo} />
+          </View>
+      </ScrollView>
+    
 
     )
 
     }
     const styles = StyleSheet.create({
         container: {
-          flex: 1,
           backgroundColor: '#fff',
-          // alignItems: 'center',
-          // justifyContent: 'center',
           borderColor:'#808080'
           
         },
+        viewstyle:{
+          flex:1
+        },
+        scrollNotView:{
+          padding: 15, 
+        },
+
         title:{
           backgroundColor: '#808080',
           borderRadius:50,

@@ -1,24 +1,28 @@
 import { View, StyleSheet, Text, TouchableOpacityProps} from "react-native"
 
 type Props = {
-  data:Pokemon;
+  data:Pokemon[];
 }& TouchableOpacityProps
 
 
 export default function Card({data, ...rest} : Props){
     return(
-      <View style = {styles.container}>
-          <Text>{data.name}</Text>
-          <Text>{data.url}</Text>
-      </View>              
+      <View>
+        {data.map((item)=>{
+            return(
+              <View style= {styles.container}>
+                  <Text>{item.name}</Text>
+              </View>
+            )
+        })}
+      </View>
+            
     )
 }
 
 const styles = StyleSheet.create({
     container: {
-      
       borderRadius:20,
-      flex: 1,
       backgroundColor: '#ffffff',
       alignItems: 'center',
       justifyContent: 'center',

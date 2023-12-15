@@ -2,7 +2,8 @@
   "expo": {
     "name": "app",
     "slug": "app",
-    "version": "1.0.0",
+    "version": "1.0.1",
+    "VersionCode":"2",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
@@ -17,14 +18,20 @@
     "ios": {
       "supportsTablet": true
     },
-    "android": {
+    "android": { 
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.thequeiraeng.app"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "06726acc-aadd-4765-abb5-0d294ffa2581"
+      }
     }
   }
 }

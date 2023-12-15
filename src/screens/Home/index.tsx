@@ -1,12 +1,9 @@
-import { Rect } from 'react-native-safe-area-context';
-import { StyleSheet, Text, View , ScrollView,Image,  SafeAreaView, TouchableOpacity, FlatList} from 'react-native';
-import { StatusBar } from 'expo-status-bar';
+import { StyleSheet, Text, View , ScrollView,Image, TouchableOpacity, } from 'react-native';
 import { useNavigation, NavigationProp} from '@react-navigation/native'; 
 import { getAllPokemon } from '../../controllers/pokemonControllers';
 import { useEffect, useState } from 'react';
 import Header from '../../components/header/Header';
 import Bullets from '../../components/bullets/Bullets';
-import Carousel from 'react-native-snap-carousel';
 import Carrossel from '../../components/carrossel/Carrossel';
 import Card from '../../components/card/Card';
 import imageFundo from '../../../assets/minion.jpg';

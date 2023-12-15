@@ -1,18 +1,25 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import SearchBar from '../searchBar/SearchBar';
-import { ScrollView } from 'react-native-gesture-handler';
-import Bullets from '../bullets/Bullets';
 import { MaterialCommunityIcons, FontAwesome5 } from '@expo/vector-icons'; 
+import { useNavigation, NavigationProp} from '@react-navigation/native'; 
+import UserConfig from '../../screens/UserConfig';
+
 
 export default function Header(){
+    const { navigate } = useNavigation<NavigationProp<any>>();
+
     return(
         <SafeAreaView style={style.headerView} >
             <StatusBar style='light'/>
             <View style={style.headerTopElements}>
-                <FontAwesome5 name="user-astronaut" size={24} color="black" />
-                <Text>Imagem</Text>
+
+                <TouchableOpacity onPress={() => navigate('UserConfig')}>
+                    <FontAwesome5 name="user-astronaut" size={24} color="black" />
+                </TouchableOpacity>
+
+                <Text>Imagem1</Text>
                 <Text>Imagem</Text>
                 <MaterialCommunityIcons name="bell" size={24} color="black" />
             </View>

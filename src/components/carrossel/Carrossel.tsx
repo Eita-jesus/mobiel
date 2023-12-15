@@ -1,6 +1,5 @@
 import {Text, View, StyleSheet, TouchableOpacityProps, ImageBackground} from 'react-native';
 import Carousel from 'react-native-snap-carousel';
-import bullets from '../../services/bullets';
 import imageFundo from '../../../assets/minion.jpg';
 
 

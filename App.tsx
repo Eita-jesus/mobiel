@@ -6,16 +6,17 @@ import InputData from './src/components/inputData/inputData';
 import Btn from './src/components/btn/Btn'
 import Teste from './src/screens/Teste';
 import Venda from './src/screens/Venda';
-
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
 import Home from './src/screens/Home';
+import UserConfig from './src/screens/UserConfig';
 
 type StackNavigatorParamsList = {
   Home: undefined; 
   Teste:undefined;
   Venda:undefined;
+  UserConfig: undefined;
 };
 
 const Stack = createStackNavigator<StackNavigatorParamsList>();
@@ -27,6 +28,7 @@ export default function App() {
         <Stack.Screen name='Home' component={Home} options={{ headerShown:false }}></Stack.Screen>
         <Stack.Screen name='Teste'component={Teste}></Stack.Screen>
         <Stack.Screen name='Venda'component={Venda}></Stack.Screen>
+        <Stack.Screen name='UserConfig'component={UserConfig} ></Stack.Screen>
       </Stack.Navigator>
     </NavigationContainer>
   );

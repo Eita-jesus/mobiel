@@ -9,7 +9,8 @@ export default function(){
         <View>
             <Text style = {styles.input}>Esse é um teste de Input</Text>
             <TextInput style = {styles.inputnew} placeholder='Digite um texto'
-            value= {inputValue}
+            value= {inputValue}   
+            
             onChangeText={(text) => setInputValue(text)}
             >
                 
